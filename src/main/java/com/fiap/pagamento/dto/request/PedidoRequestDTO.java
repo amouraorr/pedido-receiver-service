@@ -1,4 +1,4 @@
-package com.fiap.cliente.dto;
+package com.fiap.pagamento.dto.request;
 
 import lombok.Data;
 import java.util.List;

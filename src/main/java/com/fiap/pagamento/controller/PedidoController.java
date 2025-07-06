@@ -1,8 +1,8 @@
-package com.fiap.cliente.controller;
+package com.fiap.pagamento.controller;
 
-import com.fiap.cliente.dto.PedidoRequestDTO;
-import com.fiap.cliente.mapper.PedidoMapper;
-import com.fiap.cliente.usecase.ReceberPedidoUseCase;
+import com.fiap.pagamento.dto.request.PedidoRequestDTO;
+import com.fiap.pagamento.mapper.PedidoMapper;
+import com.fiap.pagamento.usecase.service.ReceberPedidoServiceUseCase;
 import lombok.var;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/pedidos")
 public class PedidoController {
 
-    private final ReceberPedidoUseCase receberPedidoUseCase;
+    private final ReceberPedidoServiceUseCase receberPedidoUseCase;
     private final PedidoMapper pedidoMapper;
 
-    public PedidoController(ReceberPedidoUseCase receberPedidoUseCase, PedidoMapper pedidoMapper) {
+    public PedidoController(ReceberPedidoServiceUseCase receberPedidoUseCase, PedidoMapper pedidoMapper) {
         this.receberPedidoUseCase = receberPedidoUseCase;
         this.pedidoMapper = pedidoMapper;
     }

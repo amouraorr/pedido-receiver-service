@@ -3,7 +3,6 @@ package com.fiap.pagamento.controller;
 import com.fiap.pagamento.dto.request.PedidoRequestDTO;
 import com.fiap.pagamento.mapper.PedidoMapper;
 import com.fiap.pagamento.usecase.service.ReceberPedidoServiceUseCase;
-import lombok.var;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

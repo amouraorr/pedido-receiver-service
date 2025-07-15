@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class Pedido {
+public class PedidoReceiver {
     private String clienteId;
     private List<Item> itens;
 

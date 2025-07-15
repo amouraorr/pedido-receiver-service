@@ -4,7 +4,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class PedidoRequestDTO {
+public class PedidoReceiverRequestDTO {
     private String clienteId;
     private List<ItemDTO> itens;
 

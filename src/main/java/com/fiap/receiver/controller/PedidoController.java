@@ -1,8 +1,8 @@
-package com.fiap.pagamento.controller;
+package com.fiap.receiver.controller;
 
-import com.fiap.pagamento.dto.request.PedidoRequestDTO;
-import com.fiap.pagamento.mapper.PedidoMapper;
-import com.fiap.pagamento.usecase.service.ReceberPedidoServiceUseCase;
+import com.fiap.receiver.dto.request.PedidoRequestDTO;
+import com.fiap.receiver.mapper.PedidoMapper;
+import com.fiap.receiver.usecase.service.ReceberPedidoServiceUseCase;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

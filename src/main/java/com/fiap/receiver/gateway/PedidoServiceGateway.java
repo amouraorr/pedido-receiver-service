@@ -1,6 +1,6 @@
-package com.fiap.pagamento.gateway;
+package com.fiap.receiver.gateway;
 
-import com.fiap.pagamento.domain.Pedido;
+import com.fiap.receiver.domain.Pedido;
 
 public interface PedidoServiceGateway {
     void encaminharPedido(Pedido pedido);

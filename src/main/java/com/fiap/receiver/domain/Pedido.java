@@ -1,4 +1,4 @@
-package com.fiap.pagamento.domain;
+package com.fiap.receiver.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

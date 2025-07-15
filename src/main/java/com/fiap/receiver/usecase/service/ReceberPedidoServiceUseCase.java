@@ -1,7 +1,7 @@
-package com.fiap.pagamento.usecase.service;
+package com.fiap.receiver.usecase.service;
 
-import com.fiap.pagamento.domain.Pedido;
-import com.fiap.pagamento.gateway.PedidoServiceGateway;
+import com.fiap.receiver.domain.Pedido;
+import com.fiap.receiver.gateway.PedidoServiceGateway;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package com.fiap.pagamento;
+package com.fiap.receiver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

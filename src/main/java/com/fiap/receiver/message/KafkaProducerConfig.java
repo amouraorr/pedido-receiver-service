@@ -1,6 +1,6 @@
-package com.fiap.pagamento.message;
+package com.fiap.receiver.message;
 
-import com.fiap.pagamento.domain.Pedido;
+import com.fiap.receiver.domain.Pedido;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;

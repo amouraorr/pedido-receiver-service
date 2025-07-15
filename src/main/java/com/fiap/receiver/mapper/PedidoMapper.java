@@ -1,7 +1,7 @@
-package com.fiap.pagamento.mapper;
+package com.fiap.receiver.mapper;
 
-import com.fiap.pagamento.domain.Pedido;
-import com.fiap.pagamento.dto.request.PedidoRequestDTO;
+import com.fiap.receiver.domain.Pedido;
+import com.fiap.receiver.dto.request.PedidoRequestDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

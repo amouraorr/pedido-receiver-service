@@ -1,7 +1,7 @@
-package com.fiap.pagamento.gateway.impl;
+package com.fiap.receiver.gateway.impl;
 
-import com.fiap.pagamento.domain.Pedido;
-import com.fiap.pagamento.gateway.PedidoServiceGateway;
+import com.fiap.receiver.domain.Pedido;
+import com.fiap.receiver.gateway.PedidoServiceGateway;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,6 @@
 package com.fiap.receiver.message;
 
-import com.fiap.receiver.domain.PedidoReceiver;
+import com.fiap.receiver.dto.request.PedidoReceiverRequestDTO;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class KafkaProducerConfig {
 
     @Bean
-    public ProducerFactory<String, PedidoReceiver> producerFactory() {
+    public ProducerFactory<String, PedidoReceiverRequestDTO> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -26,7 +26,7 @@ public class KafkaProducerConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, PedidoReceiver> kafkaTemplate() {
+    public KafkaTemplate<String, PedidoReceiverRequestDTO> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
     }
 }

@@ -1,5 +1,6 @@
 package com.fiap.receiver.message;
 
+import com.fiap.receiver.domain.PedidoReceiver;
 import com.fiap.receiver.dto.request.PedidoReceiverRequestDTO;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -21,7 +22,29 @@ public class KafkaProducerConfig {
     private String bootstrapServers;
 
     @Bean
-    public ProducerFactory<String, PedidoReceiverRequestDTO> producerFactory() {
+    public ProducerFactory<String, PedidoReceiverRequestDTO> pedidoReceiverRequestDtoProducerFactory() {
+        Map<String, Object> configProps = commonConfig();
+        return new DefaultKafkaProducerFactory<>(configProps);
+    }
+
+    @Bean
+    public KafkaTemplate<String, PedidoReceiverRequestDTO> pedidoReceiverRequestDtoKafkaTemplate() {
+        return new KafkaTemplate<>(pedidoReceiverRequestDtoProducerFactory());
+    }
+
+    @Bean
+    public ProducerFactory<String, PedidoReceiver> pedidoReceiverProducerFactory() {
+        Map<String, Object> configProps = commonConfig();
+        return new DefaultKafkaProducerFactory<>(configProps);
+    }
+
+    @Bean
+    public KafkaTemplate<String, PedidoReceiver> pedidoReceiverKafkaTemplate() {
+        return new KafkaTemplate<>(pedidoReceiverProducerFactory());
+    }
+
+    // Configurações comuns para ambos os ProducerFactories
+    private Map<String, Object> commonConfig() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -34,11 +57,6 @@ public class KafkaProducerConfig {
         configProps.put(ProducerConfig.BUFFER_MEMORY_CONFIG, 33554432);
         configProps.put(ProducerConfig.MAX_REQUEST_SIZE_CONFIG, 1048576);
 
-        return new DefaultKafkaProducerFactory<>(configProps);
-    }
-
-    @Bean
-    public KafkaTemplate<String, PedidoReceiverRequestDTO> kafkaTemplate() {
-        return new KafkaTemplate<>(producerFactory());
+        return configProps;
     }
 }

@@ -13,8 +13,8 @@ public class PedidoReceiverServiceKafkaGateway implements PedidoReceiverServiceG
 
     private final KafkaTemplate<String, PedidoReceiver> kafkaTemplate;
 
-    // Nome do tópico Kafka (ajuste conforme necessário)
-    private static final String TOPICO_NOVO_PEDIDO = "novo-pedido-queue";
+    // Nome do tópico Kafka
+    private static final String TOPICO_NOVO_PEDIDO = "novo-pedido";
 
     @Override
     public void encaminharPedido(PedidoReceiver pedido) {

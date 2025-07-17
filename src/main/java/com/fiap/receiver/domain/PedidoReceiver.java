@@ -7,7 +7,7 @@ import java.util.List;
 public class PedidoReceiver {
     private String clienteId;
     private List<Item> itens;
-    private Pagamento pagamento;
+    private Pagamento dadosPagamento;
 
     @Data
     public static class Item {

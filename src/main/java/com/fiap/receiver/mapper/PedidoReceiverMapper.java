@@ -11,7 +11,7 @@ import org.mapstruct.factory.Mappers;
 public interface PedidoReceiverMapper {
     PedidoReceiverMapper INSTANCE = Mappers.getMapper(PedidoReceiverMapper.class);
 
-    @Mapping(source = "pagamento", target = "pagamento")
+    @Mapping(source = "dadosPagamento", target = "dadosPagamento")
     PedidoReceiver toPedido(PedidoReceiverRequestDTO dto);
 
     Pagamento toPagamento(PedidoReceiverRequestDTO.PagamentoDTO dto);

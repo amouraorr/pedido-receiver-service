@@ -25,10 +25,10 @@ public class PedidoKafkaMapper {
                                 : null
                 )
                 .dadosPagamento(
-                        pedidoReceiver.getDadosPagamento() != null ?
+                        pedidoReceiver.getPagamento() != null ?
                                 DadosPagamentoRequestDTO.builder()
-                                        .numeroCartao(pedidoReceiver.getDadosPagamento().getNumeroCartao())
-                                        .metodoPagamento("CARTAO") // ou outro valor default
+                                        .numeroCartao(pedidoReceiver.getPagamento().getNumeroCartao())
+                                        .metodoPagamento("CARTAO")
                                         .build()
                                 : null
                 )

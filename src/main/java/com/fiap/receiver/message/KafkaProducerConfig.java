@@ -21,7 +21,6 @@ public class KafkaProducerConfig {
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServers;
 
-    // ProducerFactory e KafkaTemplate para PedidoRequestDTO
     @Bean
     public ProducerFactory<String, PedidoRequestDTO> pedidoRequestDtoProducerFactory() {
         Map<String, Object> configProps = commonConfig();
@@ -33,7 +32,6 @@ public class KafkaProducerConfig {
         return new KafkaTemplate<>(pedidoRequestDtoProducerFactory());
     }
 
-    // ProducerFactory e KafkaTemplate para PedidoReceiverRequestDTO
     @Bean
     public ProducerFactory<String, PedidoReceiverRequestDTO> pedidoReceiverRequestDtoProducerFactory() {
         Map<String, Object> configProps = commonConfig();
